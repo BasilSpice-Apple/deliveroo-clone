@@ -13,6 +13,7 @@ import {
   ChevronDownIcon,
   MagnifyingGlassIcon,
   AdjustmentsVerticalIcon,
+  HomeIcon,
 } from "react-native-heroicons/outline";
 import Categories from "../components/Categories";
 import FeaturedRow from "../components/FeaturedRow";
@@ -55,17 +56,17 @@ const HomeScreen = () => {
         />
 
         <View className="flex-grow">
-          <Text className="font-bold text-gray-400 text-xs">Deliver Now!</Text>
+          <Text className="font-bold text-gray-400 text-xs">Delivering To</Text>
           <Text className="font-bold text-xl">
-            Current Location
-            <ChevronDownIcon size={20} color="#00CCBB" />
+            Home 
+            {/* <HouseIcon size={20} color="#00CCBB" /> */}
           </Text>
         </View>
-        <UserIcon size={35} color="#00CCBB" />
+        <HomeIcon size={35} color="#00CCBB" />
       </View>
 
       {/* Search */}
-      <View className="flex-row items-center space-x-2 pb-2 mx-4">
+      {/* <View className="flex-row items-center space-x-2 pb-2 mx-4">
         <View className="flex-row flex-grow space-x-2 bg-gray-200 p-3">
           <MagnifyingGlassIcon size={20} color="gray" />
           <TextInput
@@ -73,13 +74,13 @@ const HomeScreen = () => {
             keyboardType="default"
           />
         </View>
-        <AdjustmentsVerticalIcon size={20} color="#00CCBB" />
-      </View>
+        <MagnifyingGlassIcon size={20} color="#00CCBB" />
+      </View> */}
 
       {/* Body */}
       <ScrollView className="bg-gray-100" contentContainerStyle={{paddingBottom: 100,}}>
         {/* Categories */}
-        <Categories />
+        {/* <Categories /> */}
         {/* {Featured Rows} */}
 
         {featuredCategories?.map((category, index) => {
