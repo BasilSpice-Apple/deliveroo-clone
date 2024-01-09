@@ -1,42 +1,49 @@
 import { View, Text, SafeAreaView, Image, Linking } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { selectRestaurant } from "../features/restaurantSlice";
+
 import { XCircleIcon } from "react-native-heroicons/solid";
 import { TouchableOpacity } from "react-native";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as Progress from "react-native-progress";
 import MapView, { Marker } from "react-native-maps";
+
 const DeliveryScreen = () => {
   const navigation = useNavigation();
   const restaurant = useSelector(selectRestaurant);
+  const dispatch = useDispatch();
 
   const onPressMobileNumberClick = (number) => {
-
-    let phoneNumber = '';
-    if (Platform.OS === 'android') {
+    let phoneNumber = "";
+    if (Platform.OS === "android") {
       phoneNumber = `tel:${number}`;
     } else {
       phoneNumber = `telprompt:${number}`;
     }
 
     Linking.openURL(phoneNumber);
- }
+  };
 
   return (
+    
     <View className=" bg-[#00CCBB] flex-1">
       <SafeAreaView className="z-50">
         <View className="justify-between items-center p-3">
-          <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-            <XCircleIcon color="white" size={50} />
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Home")}
+            className="rounded-lg bg-white p-4 "
+          >
+            <Text className="text-center text-[#00CCBB] text-lg font-bold">
+              Order More Food
+            </Text>
           </TouchableOpacity>
-        
         </View>
 
-        <View className="bg-white mx-5 my-2 rounded-md p-6 z-30 shadow-md">
+        <View className="bg-white mx-5 my-2 rounded-md p-6 z-50 shadow-md">
           <View className="flex-row justify-between">
             <View>
               <Text className="text-lg text-gray-400 ">Estimated Arrival</Text>
-              <Text className="text-4xl font-bold">45-55 Minutes</Text>
+              <Text className="text-2xl font-bold">45-55 Minutes</Text>
             </View>
             <Image
               source={{
@@ -52,6 +59,9 @@ const DeliveryScreen = () => {
           </Text>
         </View>
       </SafeAreaView>
+      
+
+      
 
       <MapView
         initialRegion={{
@@ -85,18 +95,15 @@ const DeliveryScreen = () => {
           <Text className="text-lg">Ricky</Text>
           <Text className="text-gray-400">Your Delivery Driver</Text>
         </View>
-        <TouchableOpacity 
-       onPress={() => {Linking.openURL('tel:281-330-8004');}} >
-       <Text  className="text-[#00CCBB] text-lg mr-5 font-bold">
-             Call  
-       </Text>
-   </TouchableOpacity>
-
-
-
+        <TouchableOpacity
+          onPress={() => {
+            Linking.openURL("tel:281-330-8004");
+          }}
+        >
+          <Text className="text-[#00CCBB] text-lg mr-5 font-bold">Call</Text>
+        </TouchableOpacity>
       </SafeAreaView>
     </View>
-    
   );
 };
 

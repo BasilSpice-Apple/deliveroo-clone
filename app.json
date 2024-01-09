@@ -2,7 +2,7 @@
   "expo": {
     "name": "Deliveroo-Clone",
     "slug": "another-deliveroo-clone",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
