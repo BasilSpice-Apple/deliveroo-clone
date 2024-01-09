@@ -25,14 +25,14 @@ const DeliveryScreen = () => {
   return (
     <View className=" bg-[#00CCBB] flex-1">
       <SafeAreaView className="z-50">
-        <View className="flex-row justify-between items-center p-5">
+        <View className="justify-between items-center p-3">
           <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-            <XCircleIcon color="white" size={30} />
+            <XCircleIcon color="white" size={50} />
           </TouchableOpacity>
-          <Text className="font-light text-white text-lg">Order Help</Text>
+        
         </View>
 
-        <View className="bg-white mx-5 my-2 rounded-md p-6 z-50 shadow-md">
+        <View className="bg-white mx-5 my-2 rounded-md p-6 z-30 shadow-md">
           <View className="flex-row justify-between">
             <View>
               <Text className="text-lg text-gray-400 ">Estimated Arrival</Text>

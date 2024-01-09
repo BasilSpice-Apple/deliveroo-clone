@@ -37,7 +37,7 @@ const BasketScreen = () => {
       <View className="flex-1 bg-gray-100">
         <View className="pb-7 border-b border-[#00CCBB] bg-white shadow-sm">
           <View>
-            <Text className="text-lg font-bold text-center">Basket</Text>
+            <Text className="text-lg font-bold text-center">Cart</Text>
             <Text className="text-center text-gray-400">
               {restaurant.title}
             </Text>
@@ -56,10 +56,10 @@ const BasketScreen = () => {
             }}
             className="h-7 w-7 bg-gray-300 p-4 rounded-full"
           />
-          <Text className="flex-1">Deliver in 50-75 min</Text>
-          <TouchableOpacity>
-            <Text className="text-[#00CCBB]">Change</Text>
-          </TouchableOpacity>
+          <Text className="flex-1">Estimated Delivery Time: </Text>
+         
+            <Text className="text-[#00CCBB]">50-75 min</Text>
+          
         </View>
         <ScrollView className="divide-y divide-gray-200">
           {Object.entries(groupedItemsInBasket).map(([key, items]) => (

@@ -20,7 +20,7 @@ if (items.length === 0) return null
           {items.length}
         </Text>
         <Text className="flex-1 text-white font-extrabold text-lg text-center">
-          View Basket
+          View Cart
         </Text>
         <Text className="text-lg text-white font-extrabold">
    <Text>${parseFloat(basketTotal).toFixed(2)}</Text>

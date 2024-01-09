@@ -2,9 +2,12 @@ import { View, Text, SafeAreaView, Image } from "react-native";
 import React, { useEffect } from "react";
 import * as Animatable from "react-native-animatable";
 import {useNavigation} from "@react-navigation/native"
+import { useDispatch, useSelector } from "react-redux";
+import { selectRestaurant } from "../features/restaurantSlice";
 const PreparingOrderScreen = () => {
 
 const navigation = useNavigation();
+const restaurant = useSelector(selectRestaurant)
 
 useEffect(() => {
     setTimeout(()=> {
@@ -27,7 +30,7 @@ useEffect(() => {
       iterationCount={1}
       className="text-lg my-10 text-white font-bold text-center"
       >
-        Waiting for Restaurant to accept your order!
+        Waiting for {restaurant.title} to accept your order!
       </Animatable.Text>
     </SafeAreaView>
   );
