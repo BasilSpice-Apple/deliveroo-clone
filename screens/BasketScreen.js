@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { selectRestaurant } from "../features/restaurantSlice";
 import {
+  clearBasket,
   removeFromBasket,
   selectBasketItems,
   selectBasketTotal,
@@ -22,6 +23,8 @@ const BasketScreen = () => {
   const dispatch = useDispatch();
   const finalBasketTotal = basketTotal + basketTotal * .10 + 6.99;
   const salesTax = basketTotal * .10;
+  
+ 
 
   useEffect(() => {
     const groupedItems = items.reduce((results, item) => {
@@ -123,9 +126,12 @@ const BasketScreen = () => {
           </View>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate("PreparingOrder")}
+            onPress={() => { navigation.navigate("PreparingOrder"); dispatch(clearBasket()); }
+            }
             className="rounded-lg bg-[#00CCBB] p-4"
+            
           >
+            
             <Text className="text-center text-white text-lg font-bold">
               Place Order
             </Text>
