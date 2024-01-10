@@ -11,6 +11,9 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { XCircleIcon } from "react-native-heroicons/solid";
+import {
+  ArrowLeftIcon,
+} from "react-native-heroicons/solid";
 import { urlFor } from "../sanity";
 import { PreparingOrderScreen } from "./PreparingOrderScreen";
 
@@ -47,10 +50,20 @@ const BasketScreen = () => {
           </View>
           <TouchableOpacity
             onPress={navigation.goBack}
-            className="rounded-full bg-gray-100 absolute top-3 right-5"
-          >
-            <XCircleIcon color="#00CCBB" size={50} />
+            className="rounded-full bg-white absolute top-3 left-5"
+            >
+            <ArrowLeftIcon color="#00CCBB" size={50} />
           </TouchableOpacity>
+          <View className="rounded-full bg-white justify-between items-center p-2 absolute  right-5">
+          <TouchableOpacity
+            onPress={() => {dispatch(clearBasket())}}
+            className="rounded-lg bg-white p-4 border-2 border-[#00CCBB] shadow-sm"
+          >
+            <Text className="text-center text-[#00CCBB] text-md ">
+              Empty Cart
+            </Text>
+          </TouchableOpacity>
+        </View>
         </View>
         <View className="flex-row items-center space-x-4 px-4 py-5 bg-white my-5">
           <Image

@@ -14,7 +14,11 @@ import {
   MagnifyingGlassIcon,
   AdjustmentsVerticalIcon,
   HomeIcon,
+  
 } from "react-native-heroicons/outline";
+import {
+  HomeModernIcon
+} from "react-native-heroicons/solid";
 import Categories from "../components/Categories";
 import FeaturedRow from "../components/FeaturedRow";
 import sanityClient from "../sanity";
@@ -62,7 +66,7 @@ const HomeScreen = () => {
             {/* <HouseIcon size={20} color="#00CCBB" /> */}
           </Text>
         </View>
-        <HomeIcon size={35} color="#00CCBB" />
+        <HomeModernIcon size={35} color="#00CCBB" />
       </View>
 
       {/* Search */}
